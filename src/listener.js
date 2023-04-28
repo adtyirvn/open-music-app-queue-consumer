@@ -7,17 +7,16 @@ class Listener {
 
   async listen(message) {
     try {
-      const { userId, playlistId, targetEmail } = JSON.parse(
+      const { playlistId, targetEmail } = JSON.parse(
         message.content.toString()
       );
-      const { username } = await this._exportService.getUserById(userId);
+
       const { name } = await this._exportService.getPlaylistById(playlistId);
       const songs = await this._exportService.getPlaylistSong(playlistId);
       const data = {
         playlist: {
           id: playlistId,
           name,
-          username,
           songs,
         },
       };

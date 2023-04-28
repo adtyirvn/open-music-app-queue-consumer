@@ -5,15 +5,6 @@ class ExportService {
     this._pool = new Pool();
   }
 
-  async getUserById(userId) {
-    const query = {
-      text: 'SELECT username FROM users WHERE id = $1',
-      values: [userId],
-    };
-    const result = await this._pool.query(query);
-    return result.rows[0];
-  }
-
   async getPlaylistById(playlistId) {
     const query = {
       text: `SELECT name FROM playlist WHERE id = $1`,
