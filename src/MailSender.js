@@ -17,10 +17,10 @@ class MailSender {
       from: 'Open Music Apps',
       to: targetEmail,
       subject: 'Ekspor Playlist',
-      tect: 'Terlampir hasil dari ekspor playlist',
+      text: 'Terlampir hasil dari ekspor playlist',
       attachments: [
         {
-          filename: 'playtlist.json',
+          filename: 'playlist.json',
           content,
         },
       ],
